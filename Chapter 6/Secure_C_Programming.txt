@@ -1,0 +1,91 @@
+Secure C Programming
+
+
+Bounds Checking for Array Indeces
+
+It's important to ensure that every index you use to access an array element is within the 
+array's bounds. A one-dimensional array's indices must be greater than or equal o 0 and
+less than the number of array elements. A two-dimensional array's row and column indices
+must be greater than or equal to 0 and less than the numbers of rowns and columns,
+respectively. This extends to arrays with additional dimensions as well.
+
+Allowing programs to read from or write to array elements outside the bounds of arrays
+are common security flaws. Reading from out-of-bounds array elements can cause a program
+to crash or even appear to execute correctly while using bad data. Writing to an out-of-bounds
+element (known as a buffer overflow) can corrupt a program's data in memory, crash a 
+program and allow attackers to exploit the system and execute their own code.
+
+As we stated in the chapter, C provides no automatic bounds checking for arrays, so you
+must provide your own. For techniques that help you prevent such problems, see CERT
+guideline ARR30-C.
+
+
+scanf_s
+
+Bounds checking is also important in string processing. When reading a string into a char
+array, scanf does not prevent buffer overflows. If the number of characters input is greater
+than or equal to the array's length, scanf will write characters, including the string's
+terminating null character ('\0'), beyond the end of the array. This might overwrite other
+variables' values. In addition, if the program writes to those other variables, it might
+overwrite the string's '\0'.
+
+A function determines where a string ends by looking for its terminating '\0' character.
+For example, recall that function printf outputs a string by reading characters from the
+beginning of the string in memory and continuing until it encounters the string's '\0'.
+If the '\0' is missing, printf continues reading from memory until it encounters some later
+'\0' in memory. This can lead to strange results or cause a program to crash.
+
+The C11 standard's optional Annex K provides new, more secure, versions of many string-processing
+and input/output functions. When reading a string into a character array function scanf_s
+performs additional checks to ensure that it does not write beyond the end of the array.
+Assuming that myString is a 20-character array, the statement
+
+      scanf_s("%19s", myString, 20);
+
+reads a string into myString. Function scanf_s requires two arguments for each %s in the 
+format string:
+
+   * a character array in which to place the input string and
+   * the array's number of elements.
+   
+The function uses the number of elements to prevent buffer overflows. For example, it's 
+possible to supply a field width for %s that's too long for the underlying character array, or
+to simply omit the field width entirely. With scanf_s, if the number of characters input
+plus the terminating null character is larger than the number of array elements specified,
+the %s conversion fails. For the preceding statement, which contains only one conversion
+specifier, scanf_s would return 0 indicating that no conversions were performed, and the
+array myString would be unaltered.
+
+In general, if your compiler supports the functions from the C standard's optional
+Annex K, you should use them. We discuss additional Annex K functions in later Secure C
+Programming sections.
+
+
+Don't Use Strings Read from the User as Format-Control Strings
+
+You might have noticed that throughout this book, we do not use single-argument printf
+statements. Instead we use one of the following forms:
+
+   * When we need to output a '\n' after the string, we use function puts (which
+     automatically outputs a '\n' after its single string argument), as in
+	 
+      puts("Welcome to C!");
+	  
+   * When we need the cursor to remain on the same line as the string, we use function
+     printf, as in
+
+      printf("%s", "Enter first integer: ");
+	  
+Because we were displaying string literals, we certainly could have used the one-argument
+form of printf, as in
+
+      printf("Welcome to C!\n");
+	  printf("Enter first integer: ");
+	  
+When printf evaluates the format-control string in its first (and possibly its only argument,
+the function performs tasks based on the conversion specifier(s) in that string. If the 
+format-control string were obtained from the user, an attacker could supply malicious
+conversion specifiers that would be "executed" by the formatted output function. Now that you
+know how to read strings into character arrays, it's important to note that you should 
+never use as a printf's format-control string a character array that might contain user input.
+For more information, see CERT guideline FIO30-C.

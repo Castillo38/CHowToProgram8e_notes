@@ -1,0 +1,13 @@
+Secure C Programming
+
+
+The C standard lists many caes in which using incorrect library-function arguments can
+result in undefined behaviors. These can cause security vulnerabilities, so they should be
+avoided. Such problems can occur when using printf (or any of its variants, such as
+sprintf, fprintf, printf_s, etc.) with improperly formed conversion specifications.
+CERT rule FIO00-C (cert.org.) discusses these issues and presents a table showing the valid
+combinations of formatting flags, length modifiers and conversoin-specifier characters
+that can be used to form conversion specifications. The table also shows the proper
+argument type for each valid conversion specification. In general, as you study any
+programming language, if the language specification says that doing someting can lead to
+undefined behavior, avoid doing it to prevent security vulnerabilities.

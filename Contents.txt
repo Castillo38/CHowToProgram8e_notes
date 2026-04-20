@@ -1,0 +1,340 @@
+2  Introduction to C Programming
+2.1   Introduction
+2.2   A Simple C Program: Printing a Line of Text
+2.3   Another Simple C Program: Adding Two Integers
+2.4   Memory Concepts
+2.5   Arithmetic in C
+2.6   Decision Making: Equality and Relational Operators
+2.7   Secure C Programming
+
+
+3  Structured Program Development in C
+3.1   Introduction
+3.2   Algorithms
+3.3   Pseudocode
+3.4   Control Structures
+3.5   The if Selection Statement
+3.6   The if...else Selection Statement
+3.7   The while Iteration Statement
+3.8   Formulating Algorithms Case Study 1: Counter-Controlled Iteration
+3.9   Formulating Algorithm with Top-Down, Stepwise Refinement
+      Case Study 2: Sentinel-Controlled Iteration
+3.10  Formulating Algorithm with Top-Down, Stepwise Refinement
+      Case Study 3: Nested Control Statements
+3.11  Assignment Operators
+3.12  Increment and Decrement Operators
+3.13  Secure C Programming
+
+
+4  Program Control
+4.1   Introduction
+4.2   Iteration Essentials
+4.3   Counter-Controlled Iteration
+4.4   for Iteration Statement
+4.5   for Statement: Notes and Observations
+4.6   Examples Using the for Statement
+4.7   switch Multiple-Selection Statement
+4.8   do...while Iteration Statement
+4.9   break and continue Statements
+4.10  Logical Operators
+4.11  Confusing Equality (==) and Assignment (=) Operators
+4.12  Structured Programming Summary
+4.13  Secure C Programming
+
+
+5  C Functions
+5.1   Introduction
+5.2   Modularizing Programs in C
+5.3   Math Library Functions
+5.4   Functions
+5.5   Function Definitions
+      5.5.1   square Function
+      5.5.2   maximum Function
+5.6   Function Prototypes: A Deeper Look
+5.7   Function Call Stack and Stack Frames
+5.8   Headers
+5.9   Passing Arguments By Value and By Reference
+5.10  Random Number Generation
+5.11  Example: A Game of Chance; Introducing enum
+5.12  Storage Classes
+5.13  Scope Rules
+5.14  Recursion
+5.15  Example Using Recursion: Fibonacci Series
+5.16  Recursion vs. Iteration
+5.17  Secure C Programming
+
+
+6  C Arrays
+6.1   Introduction
+6.2   Arrays
+6.3   Defining Arrays
+6.4   Array Examples
+      6.4.1   Defining an Array and Using a Loop to Set the Array's
+              Element Values
+      6.4.2   Initializing an Array in a Definition with an Initializer List
+      6.4.3   Specifying and Array's Size with a Symbolic Constant and
+              Initializing Array Elements with Calculations
+      6.4.4   Summing the Elements of an Array
+      6.4.5   Using Arrays to Summarize Survey Results
+      6.4.6   Graphing Array Element Values with Histograms
+      6.4.7   Rolling a Die 60,000,000 Times and Summarizing the Results
+              in an Array
+6.5   Using Character Arrays to Store and Manipulate Strings
+      6.5.1   Initializing a Character Array with a String
+      6.5.2   Initializing a Character Array with an Initializer List of Characters
+      6.5.3   Accessing the Characters in a String
+      6.5.4   Inputting into a Character Array
+      6.5.5   Outputting a Character Array That Represents a String
+      6.5.6   Demonstrating Character Arrays
+6.6   Static Local Arrays and Automatic Local Arrays
+6.7   Passing Arrays to Functions
+6.8   Sorting Arrays
+6.9   Case Study: Computing Mean, Median and Mode Using Arrays
+6.10  Searching Arrays
+      6.10.1  Searching an Array with Linear Search
+      6.10.2  Searching an Array with Binary Search
+6.11  Multidimensional Arrays
+      6.11.1  Illustrating a Double-Subcripted Array
+      6.11.2  Initializing a Double-Subcripted Array
+      6.11.3  Setting the Elements in One Row
+      6.11.4  Totaling the Elements in a Two-Dimensional Array
+      6.11.5  Two-Dimensional Array Manipulations
+6.12  Variable-Lenght Arrays
+6.13  Secure C Programming
+
+
+7  C Pointers 
+7.1   Introduction
+7.2   Pointer Variable Definitions and Initialization
+7.3   Pointer Operators
+7.4   Passing Arguments to Functions by Reference
+7.5   Using the const Qualifier with Pointers
+      7.5.1   Converting a String to Uppercase Using a Non-Constant Pointer
+              to Non-Constant Data
+      7.5.2   Printing a String One Character at a Time Using a Non-Constant
+              Pointer to Constant Data
+      7.5.3   Attempting to Modify a Constant Pointer to Non-Constant Data
+      7.5.4   Attempting to Modify a Constant Pointer to Constant Data
+7.6   Bubble Sort Using Pass-by-Reference
+7.7   sizeof Operator
+7.8   Pointer Expressions and Pointer Arithmetic
+      7.8.1   Allowed Operators for Pointer Arithmetic
+      7.8.2   Aiming a Pointer at an Array
+      7.8.3   Adding an Integer to a Pointer
+      7.8.4   Substracting an Integer from a Pointer
+      7.8.5   Incrementing and Decrementing a Pointer
+      7.8.6   Subtracting One Pointer from Another
+      7.8.7   Assigning Pointer to One Another
+      7.8.8   Pointer to void
+      7.8.9   Comparing Pointers
+7.9   Relationship between Pointers and Arrays
+      7.9.1   Pointer/Offset Notation
+      7.9.2   Pointer/Index Notation
+      7.9.3   Cannot Modify an Array Name with Pointer Arithmetic
+      7.9.4   Demonstrating Pointer Indexing and Offsets
+      7.9.5   String Copying with Arrays and Pointers
+7.10  Arrays of Pointers
+7.11  Case Study: Card Shuffling and Dealing Simulation
+7.12  Pointers to Functions
+      7.12.1  Sorting in Ascending or Descending Order
+      7.12.2  Using Function Pointers to Create a Menu-Driven System
+7.13  Secure C Programming
+
+
+8  C Characters and String
+8.1   Introduction
+8.2   Fundamentals of Strings and Characters
+8.3   Character-Handling Library
+      8.3.1   Functions isdigit, isalpha, isalnum and isxdigit
+      8.3.2   Functions islower, isupper, tolower and toupper
+      8.3.3   Functions isspace, iscntrl, ispunct, isprint and isgraph
+8.4   String-Conversion Functions
+      8.4.1   Function strtod
+      8.4.2   Function strtol
+      8.4.3   Function strtoul
+8.5   Standard Input/Output Library Functions
+      8.5.1   Functions fgets and putchar
+      8.5.2   Function getchar
+      8.5.3   Function sprintf
+      8.5.4   Function sscanf
+8.6   String-Manipulation Functions of the String-Handling Library
+      8.6.1   Functions strcpy and strncpy
+      8.6.2   Functions strcat and strncat
+8.7   Comparison Functions of the String-Handling Library
+8.8   Search Functions of the String-Handling Library
+      8.8.1   Function strchr
+      8.8.2   Function strcspn
+      8.8.3   Function strpbrk
+      8.8.4   Function strrchr
+      8.8.5   Function strspn
+      8.8.6   Function strstr
+      8.8.7   Function strtok
+8.9   Memory Functions of the String-Handling Library
+      8.9.1   Function memcpy
+      8.9.2   Function memmove
+      8.9.3   Function memcmp
+      8.9.4   Function memchr
+      8.9.5   Function memset
+8.10  Other Functions of the String-Handling Library
+      8.10.1  Function strerror
+      8.10.2  Function strlen
+8.11  Secure C Programming
+
+
+9  C Formatted Input/Output
+9.1   Introduction
+9.2   Streams
+9.3   Formatting Output with printf
+9.4   Printing Integers
+9.5   Printing Strings and Characters
+      9.5.1   Conversion Specifiers e, E and f
+      9.5.2   Conversion Specifiers g and G
+      9.5.3   Demonstrating Floating-Point Conversion Specifiers
+9.6   Printing Strings and Characters
+9.7   Other Conversion Specifiers
+9.8   Printing with Field Widths and Precision
+      9.8.1   Specifying Field Widths for Printing Integers
+      9.8.2   Specifying Precisions for Integers, Floating-Point Numbers
+              and Strings
+      9.8.3   Combining Field Widths and Precisions
+9.9   Using Flags in the printf Format Control String
+      9.9.1   Right and Left Justification
+      9.9.2   Printing Positive and Negative Numbers with and without
+              the + Flag
+      9.9.3   Using the Space Flag
+      9.9.4   Using the # Flag
+      9.9.5   Using the 0 Flag
+9.10  Printing Literals and Escape Sequences
+9.11  Reading Formatted Input with scanf
+      9.11.1  scanf Syntax
+      9.11.2  scanf Conversion Specifiers
+      9.11.3  Reading Integers with scanf
+      9.11.4  Reading Floating-Point Numbers with scanf
+      9.11.5  Reading Characters and Strings with scanf
+      9.11.6  Using Scan Sets with scanf
+      9.11.7  Using Field Widths with scanf
+      9.11.8  Skipping Characters in an Input Stream
+9.12  Secure C Programming
+
+
+10 C Structures, Unions, Bit Manipulation and Enumerations
+10.1  Introduction
+10.2  Structure Definitions
+      10.2.1  Self-Referencial Structures
+      10.2.2  Defining Variables of Structure Types
+      10.2.3  Structure Tag Names
+      10.2.4  Operations That Can Be Performed on Structures
+10.3  Initializing Structures
+10.4  Accessing Structure Members with . and ->
+10.5  Using Structures with Functions
+10.6  typedef
+10.7  Example: High-Performance Card Shuffling and Dealing Simulation
+10.8  Unions
+      10.8.1  Union Declarations
+      10.8.2  Operations That Can Be Performed on Unions
+      10.8.3  Initializing Unions in Declarations
+      10.8.4  Demonstrating Unions
+10.9  Bitwise Operators
+      10.9.1  Displaying an Unsigned Integer in Bits
+      10.9.2  Making Function displayBits More Generic and Portable
+      10.9.3  Using the Bitwise AND, Inclusive OR, Exclusive OR and
+              Complement Operators
+      10.9.4  Using the Bitwise Left- and Right-Shift Operators
+      10.9.5  Bitwise Assignment Operators
+10.10 Bit Fields
+      10.10.1 Defining Bit Fields
+      10.10.2 Using Bit Fields to Represent a Card's Face, Suit and Color
+      10.10.3 Unnamed Bit Fields
+10.11 Enumeration Constants
+10.12 Anonymous Structures and Unions
+10.13 Secure C Programming
+
+
+11 C File Processing
+11.1  Introduction
+11.2  Files and Streams
+11.3  Creating a Sequential-Access File
+      11.3.1  Pointer to a FILE
+      11.3.2  Using fopen to Open the File
+      11.3.3  Using feof to Check for the End-of-File Indicator
+      11.3.4  Using fprintf to Write to the File
+      11.3.5  Using fclose to Close the File
+      11.3.6  File Open Modes
+11.4  Reading Data from a Sequential-Access File
+      11.4.1  Resetting the File Position Pointer
+      11.4.2  Credit Inquiry Program
+11.5  Random-Access Files
+11.6  Creating a Random-Access File
+11.7  Writing Data Randomly to a Random-Access File
+      11.7.1  Positioning the File Position Pointer with fseek
+      11.7.2  Error Checking
+11.8  Reading Data from a Random-Acces File
+11.9  Case Study: Transaction-Processing Program
+11.10 Secure C Programming
+
+
+12 C Data Structures
+12.1  Introduction
+12.2  Self-Referencial Structures
+12.3  Dynamic Memory Allocation
+12.4  Linked Lists
+      12.4.1  Function insert
+      12.4.2  Function delete
+      12.4.3  Function printList
+12.5  Stacks
+      12.5.1  Function push
+      12.5.2  Function pop
+      12.5.3  Applications of Stacks
+12.6  Queues
+      12.6.1  Function enqueue
+      12.6.2  Function dequeue
+12.7  Trees
+      12.7.1  Function insertNode
+      12.7.2  Traversals: Functions inOrder, preOrder and postOrder
+      12.7.3  Duplicate Elimination
+      12.7.4  Binary Tree Search
+      12.7.5  Other Binary Tree Operations
+12.8  Secure C Programming
+
+
+13 C Preprocessor
+13.1  Introduction
+13.2  #include Preprocessor Directive
+13.3  #define Preprocessor Directive: Symbolic Constants
+13.4  #define Preprocessor Directive: Macros
+      13.4.1  Macro with One Argument
+      13.4.2  Macro with Two Arguments
+      13.4.3  Macro Continuation Character
+      13.4.4  #undef Preprocessor Directive
+      13.4.5  Standard Library Functions and Macros
+      13.4.6  Do Not Place Expressions with Side Effects in Macros
+13.5  Conditional Compilation
+      13.5.1  #if...#endif Preprocessor Directive
+      13.5.2  Commenting Out Blocks of Code with #if...#endif
+      13.5.3  Conditionally Compiling Debugging Code
+13.6  #error and #pragma Preprocessor Directives 
+13.7  # and ## Operators
+13.8  Line Numbers
+13.9  Predefined Symbolic Constants
+13.10 Assertions
+13.11 Secure C Programming
+
+
+14 Other C Topics
+14.1  Introduction
+14.2  Redirecting I/O
+      14.2.1  Redirecting Input with <
+      14.2.2  Redirecting Input with |
+      14.2.3  Redirecting Output
+14.3  Variable-Length Argument Lists
+14.4  Using Command-Line Arguments
+14.5  Compiling Multiple-Source-File Programs
+      14.5.1  extern Declarations for Global Variables in Other Files
+      14.5.2  Function Prototypes
+      14.5.3  Restricting Scope with static
+      14.5.4  Makefiles
+14.6  Program Termination with exit and atexit
+14.7  Suffixes for Integer and Floating-Point Literals
+14.8  Signal Handling
+14.9  Dynamic Memory Allocation: Functions calloc and realloc
+14.10 Unconditional Branching with goto

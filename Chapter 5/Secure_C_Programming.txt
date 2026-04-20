@@ -1,0 +1,18 @@
+Secure C Programming
+
+
+Secure Random Numbers
+
+In Section5.10, we introduced the rand function for generating pseudorandom numbers.
+The C standard library does not provide a secure random-number generator. According to 
+the C standard document's description for function rand, "There are no guarantees as to the
+quality of the random sequence produced and some implementations are known to produce
+sequences with distressingly non-random low-order bits". The CERT guideline MSC30-C indicates
+that implementation-specific random-number generation functions must be used to ensure
+that the random numbers procuded are not predictable, this is extremely important, for
+example, in cryptography and other security applications. The guideline presents several
+platform-specific random-number generators that are considered to be secure. For example,
+Microsoft Windows provides the CryptGenRandom function, and POSIX based systems (such as
+Linux) provide a random function that produces more secure results. For more information
+see guideline MSC30-C. If you're building industrial-strength applications that require
+random numbers, you should investigate for your platform the recomended function(s) to use.

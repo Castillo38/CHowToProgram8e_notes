@@ -1,0 +1,62 @@
+Secure C Programming
+
+
+Arithmetic Overflow
+
+Figure 2.5 presented an addition program which calculated the sum of two int values (line
+18) with the statement
+
+      sum = integer1 + integer2;
+
+Even this simple statement has a potential problem, adding the integers could result in a
+value that's too large to store in an int variable. This is known as arithmetic overflow and
+can cause undefined behavior, possibly leaving a system open to attack.
+
+The platform-specific maximum and minimum values that can be stored in an int 
+variable are represented by the constants INT_MAX and INT_MIN, respectively, which are
+defined in the header <limits.h>. There are similar constants for the other integral types
+that we'll be introducing in Chapter 4. You can see your platform's values for these con-
+stants by opening the header <limits.h> in a text editor.
+
+It's considered a good practice to ensure that before you perform arithmetic calculations
+like the one in line 18 of Fig. 2.5, they will not overflow. The code for doing this is shown
+on the CERT website, just search for guideline "INT32-C".
+The code uses the && (logical AND) and || (logical OR) operators, which we discuss in 
+Chapter 4. In industrial-strenght code, you should perform checks like these for all calcula-
+tions. Later chapters show other programming techniques for handling such errors.
+
+
+Unsigned Integers
+
+In Fig. 3.6, line 8 declared as an unsigned int the variable counter because it's used to
+count only non-negative values. In general, counters that should store only non-negative
+values should be declared with unsigned before the integer type. Variables of unsigned
+types can represent values from 0 to approximately twice the positive range of the corre-
+sponding signed integer types. You can determine your platform's maximum unsigned
+int value with the constant UINT_MAX from <limits.h>.
+
+The class-averaging program in Fig. 3.6 could have declared as unsigned int the vari-
+ables grade, total and average. Grades are normally values from 0 to 100, so the total 
+and average should each be greater than or equal to 0. We declared those variables as ints
+because we can't control what the user actually enters, the user could enter negative
+values. Worse yet, the user could enter a value that's not even a number. (We'll show how
+to deal with such inputs later in the book).
+
+Sometimes sentinel-controlled loops use invalid values to terminate a loop. For example, 
+the class-averaging program of Fig. 3.8 terminates the loop when the user enters
+the sentinel -1 (an invalid grade), so it would be improper to declare variable grade as an
+unsigned int. As you'll see, the end-of-file (EOF) indicator, which is introduced in the
+next chapter and is often used to terminate sentinel-controlled loops, is also a negative
+number. For more information, see Chapter 5, "Integer Security" of robert Seacord's
+book Secure Coding in C and C++, 2/e.
+
+
+scanf_s and printf_s
+
+The C11 standard's Annex K introduces more secure versions of printf and scanf called
+printf_s and scanf_s, we discuss these functions and the corresponding security issues in
+Sections 6.13 and 7.13. Annex K is designated as optional, so not every C vendor will im-
+plement it . Microsoft implemented its own versions of printf_s and scanf_s prior to the
+publication of the C11 standard, and its compiler immediately began issuing warnings for
+every scanf call. The warnings say that scanf is deprecated, it should no longer be used,
+and that you should consider using scanf_s instead.

@@ -1,0 +1,38 @@
+Secure C Programming
+
+We mentioned The CERT C Secure Coding Standard in the Preface and indicated that we
+would follow certain guidelines that will help you avoid programming practices that open
+system to attacks.
+
+Avoid Single-Argument printfs
+One such guideline is to avoid using printf with a single string argument. If you need to
+display a string that terminates with a newline, use the puts function, which displays its
+string argument followed by a newline character. For example, in Fig. 2.1, line 8
+
+      printf( "Welcome to C!\n" );
+	  
+should be written as:
+
+      puts( "Welcome to C!\n" );
+	  
+We did not include \n in the preceding string because puts adds it automatically.
+If you need to display a string without a terminating newline character, use printf
+with two arguments: a "%s" format control string and the string to display. The %s con-
+version specifier is for displaying a string. For example, in Fig. 2.3, line 8
+
+      printf( "Welcome " );
+	  
+should be written as:
+
+      printf( "%s", "Welcome " );
+	  
+Although the printfs in this chapter as written are actually not insecure, these changes 
+are responsible coding practices that will eliminate certain security vulnerabilities as we get
+deeper into C, we'll explain the rationale later in the book. From this point forward, we
+use these practices in the chapter examples and you should use them in your exercise solu-
+tions.
+
+scanf and printf, scanf_s and printf_s
+We introduced scanf and printf in this chapter. We'll be saying more about these in sub-
+sequent Secure C Coding Guidelines sections, beginning in Section 3.13. We'll also dis-
+cuss scanf_s and printf_s, which were introduced in C11.

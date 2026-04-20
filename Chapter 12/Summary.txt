@@ -1,0 +1,155 @@
+Summary
+
+
+
+Section 12.1 Introduction
+
+* Dynamic data structures grow and shrink at execution time.
+
+* Linked lists are collections of data items "lined up in a row", insertions and deletions are
+  made anywhere in a linked list.
+
+* With stacks, insertions and deletions are made only at the top.
+
+* Queues represent waiting lines; insertions are made at the back (also referred to as the tail)
+  of a queue and deletions are made from the front (also referred to as the head) of a queue.
+
+* Binary trees facilitate high-speed searching and sorting of data, efficient elimination of
+  duplicate data items, representing file-system directories and compiling expressions into 
+  machine language.
+
+
+
+Section 12.2 Self-Referential Structures
+
+* A self-referential structure contains a pointer member that points to a structure of the same
+  type.
+
+* Self-referential structures can be linked together to form lists, queues, stacks and trees.
+
+* A NULL pointer normally indicates the end of a data structure.
+
+
+
+Section 12.3 Dynamic Memory Allocation
+
+* Creating and maintaining dynamic data structures require dynamic memory allocation.
+
+* Functions malloc and free, and operator sizeof, are essential to dynamic memory allocation.
+
+* Function malloc receives the number of bytes to be allocated and returns a void * pointer to the
+  allocated memory. A void * pointer may be assigned to a variable of any pointer type.
+
+* Function malloc is normally used with the sizeof operator.
+
+* The memory allocated by malloc is not initialized.
+
+* If no memory is available, malloc returns NULL.
+
+* Function free deallocates memory so that it can be reallocated in the future.
+
+* C also provides functions calloc and realloc for creating and modifying dynamic arrays.
+
+
+
+Section 12.4 Linked Lists
+
+* A linked list is a linear collection of self-referential structures, called nodes, connected by
+  pointer links.
+
+* A linked list is accessed via a pointer to the first node. Subsequent nodes are accessed via the
+  link pointer member stored in each node.
+
+* By convention, the link pointer in the last node of a list is set to NULL to mark the end of the
+  list.
+
+* Data is stored in a linked list dynamically, each node is created as necessary.
+
+* A node can contain data of any type including other struct objects.
+
+* Linked lists are dynamic, so the length of a list can increase or decrease as necessary.
+
+* Linked-list nodes are normally not stored contiguously in memory. Logically, however, the nodes
+  of a linked list appear to be contiguous.
+
+
+
+Section 12.5 Stacks
+
+* A stack can be implemented as a constrained version of a linked list. New nodes can be added to a
+  stack and removed from a stack only at the top, referred to as a last-in, first-out (LIFO) data
+  structure.
+
+* The primary functions used to manipulate a stack are push and pop. Function push creates a new 
+  node and places it on top of the stack. Function pop removes a node from the top of the stack,
+  frees the memory that was allocated to the popped node and returns the popped value.
+
+* Whenever a function called is made, the called function must know how to return to its caller, so
+  the return address is pushed onto a stack. If a series of function calls occurs, the successive
+  return values are pushed onto the stack in last-in, first-out order so that each function can
+  return to its caller. Stacks support recursive function calls in the same manner as conventional
+  nonrecursive calls.
+
+* Stacks are used by compilers in the process of evaluating expressions and generating
+  machine-language code.
+
+
+
+Section 12.6 Queues
+
+* Queue nodes are removed only from the head of the queue and inserted only at the tail of the
+  queue, referred to as a first-in, first-out (FIFO) data structure.
+
+* The insert and remove operations for a queue are known as enqueue and dequeue.
+
+
+
+Section 12.7 Trees
+
+* A tree is a nonlinear, two-dimensional daa structure. Tree nodes contain two or more links.
+
+* Binary trees are trees whose nodes all contain two links.
+
+* The root node is the first node in a tree. Each link in the root node of a binary tree refers to
+  a child. The left child is the first node in the left subtree, and the right child is the first
+  node in the right subtree. The children of a node are called siblings.
+
+* A node with no children is called a leaf node.
+
+* A binary search tree (with no duplicate node values) has the characteristic that the values in
+  any left subtree are less than the value in its parent node, and the values in any right subtree
+  are greater than the value in its parent node.
+
+* A node can be inserted only as a leaf node in a binary search tree.
+
+* The steps for an in-order traversal are: Traverse the left subtree in-order, process the value in
+  the node, then traverse the right subtree in-order. The value in a node is not processed until
+  the values in its left subtree are processed.
+
+* The in-order traversal of a binary search tree processes the node values in ascending order. The
+  process of creating a binary search tree actually sorts the data, and thus this process is called
+  the binary tree sort.
+
+* The steps for a pre-order traversal are: Process the value in the node, traverse the left subtree
+  pre-order, then traverse the right subtree pre-order. The value in each node is processed as the
+  node is visited. After the value in a given node is processed, the values in the left subtree are 
+  processed, then the values in the right subtree are processed.
+
+* The steps for a post-order traversal are: Traverse the left subtree post-order, traverse the
+  right subtree post-order, then process the value in the node. The value in each node is not
+  processed until the values of its children are processed.
+
+* A binary search tree facilitates duplicate elimination. As the tree is being created, an attempt
+  to insert a duplicate value will be recognized because a duplicate will follow the same "go left"
+  or "go right" decisions on each comparison as the original value did. Thus, the duplicate will
+  eventually be compared with a node in the tree containing the same value. The duplicate value may
+  simply be discarded at this point.
+
+* Searching a binary tree for a value that matches a key value is fast. If the tree is tightly
+  packed, each level contains about twice as many elements as the previous level. So a binary
+  search tree with n elements would have a maximum of log2n levels, and thus a maximum of log2n
+  comparisons would have to be made either to find a match or to determine that no match exists.
+  This means that when searching a (tightly packed) 1,000-element binary search tree, no more than
+  10 comparisons need to be made because 2^10 > 1,000. When searching a (tightly packed)
+  1,000,000-element binary search tree, no more than 20 comparisons need to be made because 
+  2^20 > 1,000,000.

@@ -1,0 +1,24 @@
+Secure C Programming
+
+
+The CIRCLE_AREA macro defined in Section 13.4
+
+      #define CIRCLE_AREA(x) ((PI) * (x) * (x))
+
+is considered to be an unsafe macro because it evaluates its argument x more than once.
+This can cause subtle errors. If the macro argument contains side effects, such as incrementing
+a variable or calling a function that modifies a variable's value, those side effects would
+be performed multiple times.
+
+For example, if we call CIRCLE_AREA as follows: 
+
+      result = CIRCLE_AREA(++radius);
+
+the call to the macro CIRCLE_AREA is expanded to:
+
+      result = ((3.14159) * (++radius) * (++radius));
+
+which increments radius twice in the statement. In addition, the result of the preceding
+statement is undefined because C allows a variable to be modified only once in a statement.
+In a function call, the argument is evaluated only once before it's passed to the function.
+So, functions are always preferred to unsafe macros.

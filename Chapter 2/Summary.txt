@@ -1,0 +1,176 @@
+Summary
+
+
+
+Section 2.1 Introduction
+
+* The C language facilitates a structured and disciplined approach to computer-program design.
+
+
+
+Section 2.2 A Simple C Program: Printing a Line of Text
+
+* Comments begin with //. Comments document programs and improve program readability. 
+  C also supports multi-line comments that begin with /* and end with */.
+  
+* Comments do not cause the computer to perform any action when the program is run. They are 
+  ignored by the C compiler and do not cause any machine-language object code to be generated.
+  
+* Lines beginning with # are processed by the preprocessor before the program is compiled.
+  The # include directive tells the preprocessor to include the contents of another file.
+  
+* The <stdio.h> header contains information used by the compiler when compiling calls to
+  standard input/output library funcitons such as printf.
+  
+* The function main is a part of every C program. The parentheses after main indicate that main is
+  a program building block called a function. C programs contain one or more functions, one of
+  which must be main. Every program in C begins executing at the function main.
+  
+* Functions can return information. The keyword int to the left of main indicates that main
+  "returns" an integer (whole-number) value.
+  
+* Functions can receive information when they are called upon to execute. The void in 
+  parentheses after main indicates that main does not receive any information.
+  
+* A left brace, {, begins the body of every function. A corresponding right brace, }, ends each
+  function. This pair of braces and the portion of the programs between the braces is called
+  a block.
+  
+* The printf function instructs the computer to display information on the screen.
+  
+* A string is sometimes called a character string, a message or a literal.
+  
+* Every statement must end with a semicolon (also known as the statement terminator ; ).
+  
+* In \n, the backslash (\) is called an escape character. When encountering a backslash in a 
+  string, the compiler looks ahead at the next character and combines it with the backslash
+  to form an escape sequence. The escape sequence \n means newline.
+  
+* When a newline appears in the string output by a printf, the newline causes the cursor to
+  position to the beginning of the next line on the screen.
+  
+* The double backslash (\\) escape sequence can be used to place a single backslash in a string.
+  
+* The escape sequence \" represents a literal double-quote character.
+
+
+
+Section 2.3 Another Simple C Program: Adding Two Integers
+
+* A variable is a location in memory where a value can be stored for use by a program.
+  
+* Variables of type int hold integer values, i.e., whole numbers such as 7,-11,0,31914.
+  
+* All variables must be defined with a name and a data type before they can be used in a program.
+  
+* A variable name in C is any valid identifier. An identifier is a series of characters consisting
+  of letters, digits and underscores (_) that does not begin with a digit.
+  
+* C is case sensitive, uppercase and lowercase letters are different in C.
+  
+* Standard Library function scanf can be used to obtain input from the standard input, which is
+  usually the keyboard.
+  
+* The scanf format control string indicates the type(s) of data that should be input.
+  
+* The %d conversion specifier indicates that the data should be an integer (the letter d stands
+  for "decimal integer"). The % in this context is treated by scanf (and printf) as a special 
+  character that begins a conversion specifier.
+  
+* The arguments that follow scanf's format control string begin with an ampersand (&), called
+  the address operator, followed by a variable name. The ampersand, when combined with a
+  variable name, tells scanf the location in memory at which the variable is located.
+  The computer then stores the value for the variable at that location.
+  
+* Most calculations are performed in assignment statements.
+  
+* The = operator and the + operator are binary operators, each has two operands.
+  
+* In a printf that specifies a format control string as its first argument the conversion
+  specifiers indicate placeholders for data to output.
+  
+
+
+Section 2.4 Memory Concepts
+
+* Variable names correspond to locations in the computer's memory. Every variable has a name, 
+  a type and a value.
+  
+* Whenever a value is placed in a memory location, the value replaces the previous value in that
+  location; thus, placing a new value into a memory location is said to be destructive.
+  
+* When a value is read from a memory location, the process is said to be nondestructive.
+
+
+
+Section 2.5 Arithmetic in C
+
+* In algebra, if we want to multiply a times b, we can simply place these single-letter variable
+  names side by side, as in ab. In C, however, if we wer to do this, ab would be interpreted as a
+  single, two-letter name (or identifier). Therefore, C (like other programming languages in
+  general) requires that multiplication be explicitly denoted by using the * operator,
+  as in a * b.
+  
+* Arithmetic expressions in C must be written in straight-line form to facilitate entering 
+  programs into the computer. Thus, expressions such as "a divided by b" must be written as a/b,
+  so that all operators and operands appear in a straight line.
+  
+* Parentheses are used to group terms in C expressions in much the same manner as in
+  algebraic expressions.
+  
+* C evaluates arithmetic expressions in a precise sequence determined by the following rules of
+  operator precedence, which are generally the same as those followed in algebra.
+  
+* Multiplication, division and remainder operations are applied first. If an expression contains
+  several multiplication, division and remainder operations, evaluation proceeds from left to 
+  right. Multiplication, division and remainder are said to be on the same level of precedence.
+  
+* Addition and subtraction operations are evaluated next. If an expression contains several
+  addition and subtraction operations, evaluation proceeds from left to right. Addition and 
+  subtraction also have the same level of precedence, which is lower than the precedence of the 
+  multiplication, division and remainder operators.
+  
+* The rules of operator precedence specify the order C uses to evaluate expressions. The
+  associativity of the operators specifies whether they evaluate from left to right or from
+  right to left.
+
+
+
+Section 2.6 Decision Making: Equality and Relational Operators
+
+* Executable C statements either perform actions or make decisions.
+  
+* C's if statement allows a program to make a decision based on the truth or falsity of a
+  statement of fact called a condition. If the condition is met (i.e., the condition is true) the
+  statement in the body of the if statement executes. If the conditions isn't met (i.e., the
+  condition is false) the body statement does not execute. Whether the body statement is executed
+  or not, after the if statement completes, execution proceeds with the next statement after the 
+  if statement.
+  
+* Conditions in if statements are formed by using the equality and relational operators.
+  
+* The relational operators all have the same level of precedence and associate left to right. The
+  equality operators have a lower level of precedence than the relational operators and they also 
+  associate left to right.
+  
+* To avoid confusing assignment (=) and equality (==), the assignment operator should be read
+  "gets" and the equality operator should be read "double equals".
+  
+* In C programs, white-space characters such as tabs, newlines and spaces are normally ignored.
+  So, statements may be split over several lines. It's not correct to split identifiers.
+  
+* Keywords (or reserved words) have special meaning to the C compiler, so you cannot use them as
+  identifiers such as variable names.
+  
+  
+  
+Section 2.7 Secure C Programming
+
+* One practice to help avoid leaving systems open to attacks is to avoid using printf with a
+  single string argument.
+  
+* To display a string followed by a newline character, use the puts function, which displays
+  its string argument followed by a newline character.
+  
+* To display a string without a trailing newline character, you can use printf with the "%s"
+  conversion specifier as the first argument and the string to display as the second argument.

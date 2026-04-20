@@ -1,0 +1,113 @@
+Summary
+
+
+
+Section 13.1 Introduction
+
+* The preprocessor executes before a program is compiled.
+
+* All preprocessor directives begin with #.
+
+* Only whitespace characters and comments may appear before a preprocessor directive on a line.
+
+
+
+Section 13.2 #include Preprocessor Directive
+
+* The #include directive includes a copy of the specified file. If the filename is enclosed in
+  quotes, the preprocessor begins searching in the same directory as the file being compiled for
+  the file to be included. If the filename is enclosed in angle brackets (< and >), as is the case
+  for C standard library headers, the search is performed in an implementation-defined manner.
+ 
+
+
+Section 13.3 #define Preprocessor Directive: Symbolic Constants
+
+* The #define preprocessor directive is used to create symbolic constants and macros.
+
+* A symbolic constant is a name for a constant.
+
+
+
+Section 13.4 #define Preprocessor Directive: Macros
+
+* A macro is an operation defined in a #define preprocessor directive. Macros may be defined with
+  or without arguments.
+
+* Replacement-text is specified after a symbolic constant's identifier or after the closing right
+  parentheses of a macro's argument list. If the replacement-text for a macro or symbolic constant
+  is longer than the remainder of the line, a backslash (\) is placed at the end of the line,
+  indicating that the replacement-text continues on the next line.
+
+* Symbolic constants and macros can be discarted by using the #undef preprocessor directive.
+  Directive #undef "undefines" the symbolic constant or macro name.
+
+* The scopeof a symbolic constant or macro is from its definition until it's undefined with #undef
+  or until the end of the file.
+
+
+
+Section 13.5 Conditional Compilation
+
+* Conditional compilation enablesyou to control the execution of preprocessor directives and the
+  compilation of program code.
+
+* The conditional preprocessor directive evaluate constant integer expressions. Cast expressions,
+  sizeof expressions and enumeration constants cannot be evaluated in preprocessor directives.
+
+* Every #if construct ends with #endif.
+
+* Directives #ifdef and #ifndef are provided as shorthand for #if defined(name) and 
+  #if !defined(name).
+
+* Multiple-part conditional preprocessor constructs may be tested with directives #elif and #else.
+
+
+
+Section 13.6 #error and #pragma Preprocessor Directives
+
+* The #error directive prints an implementation-dependent message that includes the tokens
+  specified in the directive.
+
+* The #pragma directive causes an implementation-defined action. If the pragma is not recognized
+  by the implementation, the pragma is ignored.
+
+
+
+Section 13.7 # and ## Operators
+
+* The # operator causes a replacement-text token to be converted to a string surrounded by quotes.
+  The # operator must be used in a macro with arguments, because the operand of # must be an
+  argument of the macro.
+
+* The ## operator concatenates two tokens. The ## operator must have two operands.
+
+
+
+Section 13.8 Line Numbers
+
+* The #line preprocessor directive causes the subsequent source-code lines to be renumbered
+  starting with the specified constant integer value.
+
+
+
+Section 13.9 Predefined Symbolic Constants
+
+* Constant __LINE__ is the line number (an integer) of the current source-code line.
+
+* Constant __FILE__ is the name of the file (a string).
+
+* Constant __DATE__ is the date the source file is compiled (a string).
+
+* Constant __TIME__ is the time the source file is compiled (a string).
+
+* Constant __STDC__ indicates whether the compiler supports Standard C.
+
+* Each of the predefined symbolic constants begins and ends with two underscores.
+
+
+
+Section 13.10 Assertions
+
+* Macro assert (<assert.h> header) tests the value of an expression. If the value is 0 (false),
+  assert prints an error message and calls function abort to terminate program execution.
