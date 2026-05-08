@@ -26,13 +26,13 @@ techniques that we presented in this chapter:
 
    * EXP34-C: Dereferencing NULL pointers typically causes programs to crash, but CERT has
      encountered cases in which dereferencing NULL pointers can allow attackers to
-	 execute code.
+	   execute code.
 	 
    * DCL13-C: Section 7.5 discussed uses of const with pointers. If a function parameters
      points to a value that will not be changed by the function, const should be used
-	 to indicate that the data is constant. For example, to represent a pointer to a 
-	 string that will not be modified, use const char * as the pointer parameter's type,
-	 as in line 21 of Fig. 7.11.
+     to indicate that the data is constant. For example, to represent a pointer to a 
+     string that will not be modified, use const char * as the pointer parameter's type,
+     as in line 21 of Fig. 7.11.
 	
    * MSC16-C: This guideline discusses techniques for encrypting function pointers to 
      help prevent attackers from overwriting them and executing attack code.

@@ -43,8 +43,8 @@ Section 5.5 Function Definitions
 * The general format for a function definition is
 
       return-value-type function-name(paramenter-list)
-	  {
-	     statements
+	    {
+	       statements
       }
 	 
   The return-value-type states the type of the value returned to the calling function. If a

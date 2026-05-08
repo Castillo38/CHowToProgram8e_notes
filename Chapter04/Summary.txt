@@ -45,8 +45,8 @@ Section 4.4 for Iteration Statement
 * The general format of the for statement is
 
       for (initialization; condition; increment) {
-	     statements
-	  }
+	       statements
+	    }
 	  
   where the initialization expression initializes (and possibly defines) the control variable, the
   condition expression is the loop-continuation condition, and the increment expression increments
@@ -72,7 +72,10 @@ Section 4.5 for Statement: Notes and Observations
   
 * The initialization, loop-continuation condition and increment can contain arithmetic expressions.
   
-* The "increment" may be negative (in which case it's really a decrement and the loop isn't
+* The "increment" may be negative (in which case it's really a decrement and the loop actually
+  counts downward).
+
+* If the loop-continuation condition is initially false, the body portion of the loop isn't
   performed. Instead, execution proceeds with the statement following the for statement.
 
 
