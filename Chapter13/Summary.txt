@@ -42,7 +42,7 @@ Section 13.4 #define Preprocessor Directive: Macros
 * Symbolic constants and macros can be discarted by using the #undef preprocessor directive.
   Directive #undef "undefines" the symbolic constant or macro name.
 
-* The scopeof a symbolic constant or macro is from its definition until it's undefined with #undef
+* The scope of a symbolic constant or macro is from its definition until it's undefined with #undef
   or until the end of the file.
 
 

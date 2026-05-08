@@ -61,7 +61,7 @@ Section 14.5 Compiling Multiple-Source-File Programs
   files together.
 
 * The storage-class specifier static, when applied to a global variable or a function, prevents it
-  from being used by aby function that's not defined in the same file. This is referred to as 
+  from being used by any function that's not defined in the same file. This is referred to as 
   internal linkage. Global variables and functions that are not preceded by static in their
   definitions have external linkage, they can be accessed in other files if those files contain
   proper declarations or function prototypes.
